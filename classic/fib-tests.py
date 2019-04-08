@@ -2,6 +2,7 @@
 # Scratch Tests while skimming the book
 
 from typing import Dict
+from typing import Generator
 from functools import lru_cache
 
 memo: Dict[int, int] = {0: 0, 1: 1}  # our base cases for fib3
@@ -41,6 +42,16 @@ def fib5(n: int) -> int:
     return next
 
 
+def fib6(n: int) -> Generator[int, None, None]:
+    yield 0  # special case
+    if n > 0: yield 1  # special case
+    last: int = 0  # initially set to fib(0)
+    next: int = 1  # initially set to fib(1)
+    for _ in range(1, n):
+        last, next = next, last + next
+        yield next  # main generation step
+
+
 if __name__ == "__main__":
     print('\nfib2 approach')
     print(fib2(5))
@@ -57,3 +68,7 @@ if __name__ == "__main__":
     print('\nfib5 approach')
     print(fib5(5))
     print(fib5(50))
+
+    print('\nfib6 approach\n')
+    for i in fib6(50):
+        print(i)
