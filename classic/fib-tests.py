@@ -72,3 +72,6 @@ if __name__ == "__main__":
     print('\nfib6 approach\n')
     for i in fib6(50):
         print(i)
+
+
+# -30-
