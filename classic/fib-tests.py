@@ -1,11 +1,13 @@
 # Classic Problems with Python (2019 Manning Press)
 # Scratch Tests while skimming the book
 
+import timeit
 from typing import Dict
 from typing import Generator
 from functools import lru_cache
 
 memo: Dict[int, int] = {0: 0, 1: 1}  # our base cases for fib3
+
 
 def fib1(n: int) -> int:
     # Results in Max recursion error
@@ -56,6 +58,7 @@ if __name__ == "__main__":
     print('\nfib2 approach')
     print(fib2(5))
     print(fib2(30))  # takes a few seconds to run these 50000+ calls
+    timeit.timeit(fib2(30))  #measure time for function that just printed
 
     print('\nfib3 approach')
     print(fib3(5))
