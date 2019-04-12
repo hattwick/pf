@@ -1,6 +1,7 @@
 # Classic Problems with Python (2019 Manning Press)
 # Scratch Tests while skimming the book
 
+import sys
 import timeit
 from typing import Dict
 from typing import Generator
@@ -17,6 +18,7 @@ def fib1(n: int) -> int:
 
 def fib2(n: int) -> int:
     #todo: add counter to track # of function calls
+
     if n < 2:  # base case to avoid excessive recursion error
         return n
     return fib2(n - 2) + fib2(n - 1)  # recursive case
@@ -41,6 +43,9 @@ def fib5(n: int) -> int:
     next: int = 1  # initially set to fib(1)
     for _ in range(1, n):
         last, next = next, last + next
+    size = sys.getsizeof(n)   #test to see size of the variable
+    print('size of n ',size)
+
     return next
 
 
@@ -58,7 +63,7 @@ if __name__ == "__main__":
     print('\nfib2 approach')
     print(fib2(5))
     print(fib2(30))  # takes a few seconds to run these 50000+ calls
-    timeit.timeit(fib2(30))  #measure time for function that just printed
+#    timeit.timeit(fib2(30))  #measure time for function that just printed
 
     print('\nfib3 approach')
     print(fib3(5))
