@@ -2,7 +2,6 @@
 # Scratch Tests while skimming the book
 
 import sys
-import timeit
 from typing import Dict
 from typing import Generator
 from functools import lru_cache
