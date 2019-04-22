@@ -32,6 +32,10 @@ def encrypt(original: str) -> Tuple[int, int]:
     dummy: int = random_key(len(original_bytes))
     original_key: int = int.from_bytes(original_bytes, "big")
     encrypted: int = original_key ^ dummy  # XOR
+    print('\n\nEncryption routine in progress >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    print('Original: ', original_bytes)
+    print('Dummy: ',dummy)
+    print('Encrypted: ', encrypted)
     return dummy, encrypted
 
 

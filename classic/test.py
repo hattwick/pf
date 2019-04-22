@@ -1,3 +1,4 @@
+# Scratch file for testing
 
 def fib2(n: int) -> int:
     if n < 2:  # base case
