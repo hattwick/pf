@@ -44,7 +44,6 @@ def fib5(n: int) -> int:
         last, next = next, last + next
     size = sys.getsizeof(n)   #test to see size of the variable
     print('size of n ',size)
-
     return next
 
 
